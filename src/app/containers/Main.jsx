@@ -13,6 +13,8 @@ import {IntroductionPage} from "../pages/IntroductionPage";
 import {Breadcrumbs, Container, Divider, Link} from "@mui/material";
 import {Grain, Home, Whatshot} from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
+import {PetPage} from "../pages/PetPage";
+import {AquariumPage} from "../pages/AquariumPage";
 
 export const Main = () => {
   return(
@@ -51,6 +53,8 @@ export const Main = () => {
         <Route path="/articles/:articleId" element={<ArticlePage/>}/>
         <Route path="/dog" element={<DogPage/>}/>
         <Route path="/cat" element={<CatPage/>}/>
+        <Route path="/pet" element={<PetPage/>}/>
+        <Route path="/aquarium" element={<AquariumPage/>}/>
         <Route path="/introductions/:introduction" element={<IntroductionPage/>}/>
         <Route path="/faq" element={<FAQPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>

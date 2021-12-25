@@ -1,3 +1,17 @@
+#CatPageContainer hr{
+  border-bottom: thick solid limegreen !important;
+  margin-bottom: 0.5rem !important;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle !important;
+}
+
+header svg{
+  vertical-align: middle !important;
+}
+
 header {
   background-color: limegreen !important;
 }
@@ -31,27 +45,51 @@ a {
   height: 10rem;
 }
 
-.banner .image-box{
+.banner .banner-box {
   position: relative;
 }
 
-.banner .image-box img{
+.banner .banner-box img {
   width: 100%;
-  height: auto;
 }
 
-.banner .image-box h6{
-  color: white;
+.banner .banner-label{
   position: absolute;
-  bottom: 3rem;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.banner .image-box p{
-  color: white;
-  position: absolute;
-  bottom: 1rem;
+.banner .banner-box h6 {
+  color: ghostwhite;
+  font-weight: bolder;
+  padding: 0 1rem;
 }
 
-main section{
-  margin: 2rem 0;
+.banner .banner-box p {
+  padding: 0 1rem;
+  color: whitesmoke;
+}
+
+aside.faq {
+  border: thin solid black;
+}
+
+.article-item-label{
+  display: inline-block;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+time{
+  vertical-align: top;
+}
+
+.hot-pet-card-label{
+  padding: 0.5rem 0 !important;
+}
+
+.hot-pet-card-label > h5{
+  text-align: center;
 }

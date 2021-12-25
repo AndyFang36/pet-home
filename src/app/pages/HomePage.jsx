@@ -4,7 +4,7 @@ import {ArticleItem} from "../../common/components/ArticleItem";
 
 export const HomePage = () => {
   return (
-    <Container maxWidth={false}>
+    <Container>
       <Stack
         direction="column"
         justifyContent="center"
