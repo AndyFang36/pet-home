@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,13 +13,23 @@ import {useDispatch, useSelector} from "react-redux";
 import {Link, NavLink} from "react-router-dom";
 
 
-const settings = ['Profile', 'Account', 'Dashboard', '退出登录'];
+const settings = ['个人资料', '我的账号', '设置', '退出登录'];
 
 export const Header = () => {
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state["loginState"].loggedIn);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  /** 设置阴影 */
+  const [elevation, setElevation] = useState(1);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+      scrollTop > 0 ? setElevation(3) : setElevation(0);
+    });
+  })
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,7 +46,7 @@ export const Header = () => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" elevation={elevation}>
       <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Typography variant="h5" noWrap component="h5" sx={{mr: 2, display: {xs: 'none', md: 'flex'}}}>

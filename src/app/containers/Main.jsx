@@ -15,37 +15,38 @@ import {Grain, Home, Whatshot} from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import {PetPage} from "../pages/PetPage";
 import {AquariumPage} from "../pages/AquariumPage";
+import {ErrorPage} from "../pages/ErrorPage";
 
 export const Main = () => {
-  return(
+  return (
     <Box component="main" padding="1rem 0">
       <Container maxWidth={false}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link
             underline="hover"
-            sx={{ display: 'flex', alignItems: 'center' }}
+            sx={{display: 'flex', alignItems: 'center'}}
             color="inherit"
             href="#"
           >
-            <Home sx={{ mr: 0.5 }} fontSize="inherit" />
+            <Home sx={{mr: 0.5}} fontSize="inherit"/>
             主页
           </Link>
           <Link
             underline="hover"
-            sx={{ display: 'flex', alignItems: 'center' }}
+            sx={{display: 'flex', alignItems: 'center'}}
             color="inherit"
             href="#"
           >
-            <Whatshot sx={{ mr: 0.5 }} fontSize="inherit" />
+            <Whatshot sx={{mr: 0.5}} fontSize="inherit"/>
             Core
           </Link>
-          <Typography sx={{ display: 'flex', alignItems: 'center' }} color="text.primary">
-            <Grain sx={{ mr: 0.5 }} fontSize="inherit" />
+          <Typography sx={{display: 'flex', alignItems: 'center'}} color="text.primary">
+            <Grain sx={{mr: 0.5}} fontSize="inherit"/>
             Breadcrumb
           </Typography>
         </Breadcrumbs>
       </Container>
-      <Container maxWidth={false} sx={{margin:"1rem 0"}}><Divider/></Container>
+      <Container maxWidth={false} sx={{margin: "1rem 0"}}><Divider/></Container>
       <Routes>
         <Route exact index path="/" element={<HomePage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
@@ -55,11 +56,18 @@ export const Main = () => {
         <Route path="/cat" element={<CatPage/>}/>
         <Route path="/pet" element={<PetPage/>}/>
         <Route path="/aquarium" element={<AquariumPage/>}/>
-        <Route path="/introductions/:introduction" element={<IntroductionPage/>}/>
+        <Route path="/introductions/:kind/:pet" element={<IntroductionPage/>}/>
         <Route path="/faq" element={<FAQPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/user/profile" element={<ProfilePage/>}/>
+        <Route element={<ErrorPage/>}/>
       </Routes>
+      <Container maxWidth={false} sx={{margin: "1rem 0"}}><Divider/></Container>
+      <Container component="section" sx={{margin: "1rem 0"}} maxWidth={false}>
+        <Typography component="p" variant="body2" textAlign="center">
+          用关爱与呵护谱写的养宠百科，全面的养宠知识满足所需，专业的宠物医生在线解答，为爱宠健康生活保驾护航。波奇——全面关爱宠物生活！
+        </Typography>
+      </Container>
     </Box>
   );
 }

@@ -1,10 +1,58 @@
-import {Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Stack, Typography} from "@mui/material";
-import {Article as ArticleIcon} from "@mui/icons-material";
+import {Avatar, Box, Button, Card, CardActions, CardContent, CardMedia, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, Stack, Typography} from "@mui/material";
+import {Article as ArticleIcon, BeachAccess, Drafts, Image, Inbox, Work} from "@mui/icons-material";
 import {ArticleItem} from "../../common/components/ArticleItem";
+import {useScrollToTop} from "../../common/utils/useScrollToTop";
+import {A11y, Navigation, Pagination} from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+/** images */
+import BannerImg1 from "../../assets/images/banners/home/home-1.jpg";
+import BannerImg2 from "../../assets/images/banners/home/home-2.jpg";
+import BannerImg3 from "../../assets/images/banners/home/home-3.jpg";
+/** css */
+import "swiper/css";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
+
+/** 主页 */
 export const HomePage = () => {
+  useScrollToTop();
+
   return (
-    <Container>
+    <Container id="HomePage">
+      <Grid container paddingBottom={4}>
+        <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+          <Swiper
+            id="HomeSwiper"
+            modules={[Navigation, Pagination, A11y]}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+          >
+            <SwiperSlide><img src={BannerImg1} alt=""/></SwiperSlide>
+            <SwiperSlide><img src={BannerImg2} alt=""/></SwiperSlide>
+            <SwiperSlide><img src={BannerImg3} alt=""/></SwiperSlide>
+          </Swiper>
+        </Grid>
+        <Grid item lg={4} xl={4}>
+          <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <ListItem>
+              <ListItemAvatar><Avatar><Image /></Avatar></ListItemAvatar>
+              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar><Avatar><Work /></Avatar></ListItemAvatar>
+              <ListItemText primary="Work" secondary="Jan 7, 2014" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar><Avatar><BeachAccess /></Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Vacation" secondary="July 20, 2014" />
+            </ListItem>
+          </List>
+        </Grid>
+      </Grid>
       <Stack
         direction="column"
         justifyContent="center"
@@ -472,11 +520,6 @@ export const HomePage = () => {
               </List>
             </Grid>
           </Grid>
-        </Box>
-        <Box component="section">
-          <Typography component="small" variant="small">
-              用关爱与呵护谱写的养宠百科，全面的养宠知识满足所需，专业的宠物医生在线解答，为爱宠健康生活保驾护航。波奇——全面关爱宠物生活！
-          </Typography>
         </Box>
       </Stack>
     </Container>

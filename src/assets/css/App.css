@@ -1,4 +1,14 @@
-#CatPageContainer hr{
+/* 通用样式 */
+header a:hover{
+  background-color: lightgreen;
+}
+
+header a.active button{
+  background-color: rgba(255,255,255,0.25);
+}
+
+#HomePage hr,
+#CatPage hr{
   border-bottom: thick solid limegreen !important;
   margin-bottom: 0.5rem !important;
 }
@@ -27,9 +37,12 @@ header #Logo {
 
 }
 
-header button {
+header a {
   color: inherit !important;
   margin: 1rem 0 !important;
+}
+header button {
+  color: inherit !important;
 }
 
 footer {
@@ -76,20 +89,35 @@ aside.faq {
 
 .article-item-label{
   display: inline-block;
-  max-width: 60%;
+  max-width: 65%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 time{
-  vertical-align: top;
+  font-size: smaller;
+  vertical-align: super;
 }
 
 .hot-pet-card-label{
   padding: 0.5rem 0 !important;
 }
 
-.hot-pet-card-label > h5{
+.hot-pet-card-label > h6{
   text-align: center;
+}
+
+.pets-articles a{
+  color: inherit;
+}
+
+.pets-articles a :hover{
+  color: limegreen;
+  cursor: pointer;
+}
+
+#HomeSwiper img{
+  width: 100%;
+  height: 20rem;
 }

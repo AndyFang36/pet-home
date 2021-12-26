@@ -44,8 +44,8 @@ export const Footer = () => {
               <Anchor href="http://www.shjbzx.cn/" rel="nofollow" target="_blank"><img src="http://h5.boqiicdn.com/accusation-v2.png" width="100" height="35" alt=""/></Anchor>
             </Stack>
           </Box>
-          <Typography>xxx</Typography>
-          <Typography>xxx</Typography>
+          <Typography>违法和不良信息举报电话：021-68826169|举报邮箱：zhengls@boqii.com</Typography>
+          <Typography>如网民接到962110电话，请立即接听</Typography>
         </Stack>
       </Container>
     </Box>

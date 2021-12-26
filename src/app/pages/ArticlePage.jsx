@@ -4,8 +4,11 @@ import {Article as ArticleIcon} from "@mui/icons-material";
 import {Article} from "../../common/components/Article";
 import {useParams} from "react-router-dom";
 import articles from "../../app/data/articles.json"
+import {useScrollToTop} from "../../common/utils/useScrollToTop";
 
 export const ArticlePage = () => {
+  useScrollToTop();
+
   const {articleId} = useParams();
   const article = articles.find(article => article.id === articleId);
 
