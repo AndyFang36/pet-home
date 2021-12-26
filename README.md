@@ -1,5 +1,20 @@
 By <a href="mailto:andylovesapple666@icloud.com">Andy Fang</a>
 
+###pages:
+<li>login *</li>
+<li>register</li>
+<li>profile</li>
+<li>home *</li>
+<li>cat page *</li>
+<li>dog page *</li>
+<li>faq
+  <ul>
+    <li>index</li>
+    <li>question</li>
+  </ul>
+</li>
+<li>introduction *</li>
+<li>about *</li>
 
 # Getting Started with Create React App
 
@@ -12,7 +27,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3002](http://localhost:3002) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

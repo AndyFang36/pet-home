@@ -9,8 +9,8 @@ export const ArticleItem = (props) => {
   return (
     <Link to={"/articles/" + id}>
       <Paper sx={{display: "flex"}} elevation={elevation !== undefined ? elevation : 0} {...props}>
-        <Box component="img" src={src} alt="" width="25%"/>
-        <Typography component="p" variant="body2" width="75%" pl={1}>{title}</Typography>
+        <Box component="img" src={src} alt="" width="40%" maxHeight="5rem"/>
+        <Typography component="p" variant="body2" width="60%" pl={1}>{title}</Typography>
       </Paper>
     </Link>
   );

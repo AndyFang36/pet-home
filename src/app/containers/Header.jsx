@@ -10,8 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {Avatar, Button, Container, Tooltip} from "@mui/material";
 import LogoImg from "../../assets/images/logo.svg";
 import {useDispatch, useSelector} from "react-redux";
-import {Link, NavLink} from "react-router-dom";
-
+import {NavLink} from "react-router-dom";
 
 const settings = ['个人资料', '我的账号', '设置', '退出登录'];
 
@@ -29,7 +28,6 @@ export const Header = () => {
       scrollTop > 0 ? setElevation(3) : setElevation(0);
     });
   })
-
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -129,7 +127,7 @@ export const Header = () => {
                   ))}
                 </Menu>
               </Box>) :
-              (<Link to="/login"><Button color="inherit">登录/注册</Button></Link>)
+              (<NavLink to="/login"><Button color="inherit">登录/注册</Button></NavLink>)
           }
         </Toolbar>
       </Container>

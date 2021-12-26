@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useState} from "react";
-import axios from "axios";
 import {Box, Button, Card, CardContent, CardMedia, Checkbox, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormHelperText, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput, Stack, Tooltip, Typography} from "@mui/material";
 import {
   AccountBox as AccountBoxIcon,
@@ -12,11 +11,12 @@ import {
 } from "@mui/icons-material";
 import LoginImg from "../../assets/images/login.jpg";
 import {useDispatch, useSelector} from "react-redux";
-import {login, logout} from "../../features/loginStateSlice";
-import {Link} from "react-router-dom";
+import {login} from "../../features/loginStateSlice";
+import {Link, useNavigate} from "react-router-dom";
 
 /** 登录界面 */
 export const LoginPage = () => {
+  const navigation =useNavigate();
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state["loginState"].loggedIn);
   const [values, setValues] = useState({account: "", password: "", agreeTerm: false});
@@ -24,67 +24,8 @@ export const LoginPage = () => {
   const [pwdVisibility, setPwdVisibility] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    // 判断是否已登录
-    axios
-      .post("/api/login/teacher/loggedIn")
-      .then((response) => {
-        response.data ? dispatch(login()) : dispatch(logout());
-      })
-      .catch((error) => {
-        console.log(error.config);
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log('Error', error.message);
-        }
-      });
-  },[]);
-
   const handleBlur = (prop) => () => {
-    switch (prop) {
-      case "account":
-        if (values.account !== "") {
-          axios({
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            method: "post",
-            withCredentials: false,
-            url: "/api/login/teacher/exist",
-            params: {username: values.account},
-            responseType: "json",
-            responseEncoding: 'utf8',
-            proxy: {protocol: 'http', host: 'localhost', port: 9091},
-          }).then(function (response) {
-            console.log(response)
-            response.data ? setErrors({...errors, account: ""}) : setErrors({...errors, account: "用户不存在！"});
-          }).catch(function (error) {
-            if (error.response) {
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            } else if (error.request) {
-              console.log(error.request);
-            } else {
-              console.log('Error', error.message);
-            }
-            console.log(error.config);
-          });
-        } else {
-          setErrors({...errors, account: ""});
-        }
-        break;
-      case "password":
-        if (values.password === "") {
-          setErrors({...errors, password: ""});
-        }
-        break;
-      default:
-        return false;
-    }
+
   }
 
   const handleChange = (prop) => (e) => {
@@ -128,38 +69,16 @@ export const LoginPage = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    axios({
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      method: "post",
-      withCredentials: false,
-      url: "/api/login/teacher",
-      params: {username: values.account, password: values.password},
-      responseType: "json",
-      responseEncoding: 'utf8',
-      proxy: {protocol: 'http', host: 'localhost', port: 9091},
-    }).then((response) => {
-      sessionStorage.setItem("user", JSON.stringify(response.data));
-      localStorage.setItem("token", response.headers.authorization);
-      dispatch(login());
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      } else if (error.request) {
-        console.log(error.request);
-      } else {
-        console.log('Error', error.message);
-      }
-      console.log(error.config);
-    });
+    // 模拟登录
+    localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+    dispatch(login());
   }
 
   if (loggedIn) {
-    window.location.assign("http://workstudy.myuniversity.edu:3001/manage");
+    navigation("http://www.pethome.com:3002/");
   } else {
     return (
-      <Container component="main" id="LoginPageContainer" maxWidth={false}>
+      <Container id="LoginPageContainer">
         <Grid container justifyContent="center">
           <Grid item>
             <Card id="LoginCard" elevation={2}>
@@ -260,9 +179,9 @@ export const LoginPage = () => {
                     {/* 提交与重置 */}
                     <Grid item>
                       <Stack id="login-form-buttons" direction="row" justifyContent="space-evenly" spacing={3}>
-                        <Link to="/"><Button type="button" variant="contained">返回首页</Button></Link>
                         <Button type="reset" onClick={resetForm} variant="contained">清空</Button>
                         <Button type="submit" onClick={submitForm} disabled={validate()} variant="contained">登录</Button>
+                        <Link to="/register">还没有账号？<Button type="button" variant="contained">点击注册</Button></Link>
                       </Stack>
                     </Grid>
                   </Grid>

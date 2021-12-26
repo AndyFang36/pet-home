@@ -43,7 +43,7 @@ export const CatPage = () => {
         <Grid item xs={0} sm={0} md={4} lg={4} xl={4} component="nav" sx={{border: "medium dashed red"}}>
           <Typography variant="h6" component="h6">宠物专题</Typography>
           <Divider/>
-          <List sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
+          <List sx={{width: '100%', bgcolor: 'background.paper'}}>
             <ListItem>
               <ListItemAvatar>
                 <Avatar><Image/></Avatar>
@@ -195,7 +195,9 @@ export const CatPage = () => {
         <Grid container className="pets-articles">
           <Grid item xs={12} sm={12} md={8} lg={8} xl={8} paddingRight={2}>
             <Box component="section" mb={2}>
-              <Typography component="h5" variant="h5">猫咪饲养</Typography>
+              <Typography component="h5" variant="h5">
+                <b className="section-label">猫咪饲养</b><Link to="#" className="more-articles">更多 >></Link>
+              </Typography>
               <Divider/>
               <Grid container spacing={1}>
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -255,7 +257,9 @@ export const CatPage = () => {
               </Grid>
             </Box>
             <Box component="section" mb={2}>
-              <Typography component="h5" variant="h5">猫咪医疗</Typography>
+              <Typography component="h5" variant="h5">
+                <b className="section-label">猫咪医疗</b><Link to="#" className="more-articles">更多 >></Link>
+              </Typography>
               <Divider/>
               <Grid container spacing={1}>
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -321,7 +325,9 @@ export const CatPage = () => {
               </Grid>
             </Box>
             <Box component="section" mb={2}>
-              <Typography component="h5" variant="h5">猫咪训练</Typography>
+              <Typography component="h5" variant="h5">
+                <b className="section-label">猫咪训练</b><Link to="#" className="more-articles">更多 >></Link>
+              </Typography>
               <Divider/>
               <Grid container spacing={1}>
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -381,6 +387,7 @@ export const CatPage = () => {
               </Grid>
             </Box>
           </Grid>
+          {/* 侧边栏 */}
           <Grid item xs={0} sm={0} md={4} lg={4} xl={4} component="aside" className="aside faq">
             <Typography component="h6" variant="h6">专家答题</Typography>
             <Divider/>

@@ -57,7 +57,7 @@ export const Main = () => {
         <Route path="/pet" element={<PetPage/>}/>
         <Route path="/aquarium" element={<AquariumPage/>}/>
         <Route path="/introductions/:kind/:pet" element={<IntroductionPage/>}/>
-        <Route path="/faq" element={<FAQPage/>}/>
+        <Route path="/faq/*" element={<FAQPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/user/profile" element={<ProfilePage/>}/>
         <Route element={<ErrorPage/>}/>
