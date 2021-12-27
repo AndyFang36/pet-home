@@ -1,13 +1,40 @@
 [
   {
-    "id": "question000001",
+    "id": "question1",
     "title":"4个月重3.1斤吃多少犬粮合适？谢谢",
-    "creationTime": 1639814498924,
-    "questioner": {
-      "id": "user00001",
-      "avatar": "https://jfsjkfdlsjdl.com/sss.jpg",
-      "name": "小明"
-    },
-    "answers": [{},{}]
+    "creationTime": "2018-09-27 13:12:09",
+    "questioner": "小明",
+    "answers": [
+      {
+        "username": "派美特宠物医院谭医生",
+        "avatar": "https://api.boqiicdn.com/fe6543b557311d41a09d6ebb?imageView2/2/w/100/interlace/1/q/90/format/jpg",
+        "content": "一般换牙期间或者饮食会导致他的口臭，第一呢，可以调整一下饮食嗯，或者给它使用一些褐藻，第二呢，你可以给它使用一些漱口水",
+        "time": "2020-12-22 13:22"
+      }
+    ]
+  },
+  {
+    "id": "question2",
+    "title":"狗见到陌生人吠叫是因为胆小吗？",
+    "creationTime": "2017-05-04 16:09:53  ",
+    "questioner":"mobi035685",
+    "answers": [
+      {
+        "username": "mobi035685 ",
+        "avatar": "https://img.boqiicdn.com/Data/User/1841/184148/18414842/avatar191058e740840ca86_b.jpg",
+        "content": "大概是缺乏安全感吧",
+        "time": "2017-05-07 22:22"
+      },
+      {
+        "username": "刘婧",
+        "avatar": "https://img.boqiicdn.com/Data/User/1144/114421/11442154/avatar621158be297163c48_b.jpg",
+        "content": "可能因为没有安全感，对陌生的人比较敏感害怕，可能会先叫张声势。",
+        "time": "2017-05-04 21:45"
+      }
+    ]
+  },
+  {
+    "id": "question3",
+    "title":"加菲猫为啥掉眼泪？？"
   }
 ]

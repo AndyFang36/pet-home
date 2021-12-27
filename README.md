@@ -2,15 +2,15 @@ By <a href="mailto:andylovesapple666@icloud.com">Andy Fang</a>
 
 ###pages:
 <li>login *</li>
-<li>register</li>
-<li>profile</li>
+<li>register *</li>
+<li>profile *</li>
 <li>home *</li>
 <li>cat page *</li>
 <li>dog page *</li>
 <li>faq
   <ul>
-    <li>index</li>
-    <li>question</li>
+    <li>index*</li>
+    <li>question*</li>
   </ul>
 </li>
 <li>introduction *</li>

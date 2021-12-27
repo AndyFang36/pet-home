@@ -9,8 +9,8 @@ import {useScrollToTop} from "../../common/utils/useScrollToTop";
 export const ArticlePage = () => {
   useScrollToTop();
 
-  const {articleId} = useParams();
-  const article = articles.find(article => article.id === articleId);
+  const {kind, category, id} = useParams();
+  const article = articles[kind][category].find(article => article.id === id);
 
   return (
     <Container>

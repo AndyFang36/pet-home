@@ -13,58 +13,59 @@ import LoginImg from "../../assets/images/login.jpg";
 import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../features/loginStateSlice";
 import {Link, useNavigate} from "react-router-dom";
+import {useScrollToTop} from "../../common/utils/useScrollToTop";
 
 /** 登录界面 */
 export const LoginPage = () => {
+  useScrollToTop();
   const navigation =useNavigate();
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state["loginState"].loggedIn);
-  const [values, setValues] = useState({account: "", password: "", agreeTerm: false});
-  const [errors, setErrors] = useState({account: "", password: "", agreeTerm: ""});
+  const [values, setValues] = useState({username: "", password: "", agreeTerm: false});
+  const [errors, setErrors] = useState({username: "", password: "", agreeTerm: ""});
   const [pwdVisibility, setPwdVisibility] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleBlur = (prop) => () => {
-
-  }
-
-  const handleChange = (prop) => (e) => {
-    const value = (prop === "agreeTerm" ? e.target.checked : e.target.value);
-    setValues({...values, [prop]: value});
     // 校验字段
     const regExp = /^[a-zA-Z0-9_-]{4,100}$/;
     switch (prop) {
       case "account":
-        if (!regExp.test(value)) {
-          setErrors({...errors, account: "账号格式错误！"});
+        if (!regExp.test(values[prop])) {
+          setErrors({...errors, username: "账号格式错误！"});
         } else {
-          setErrors({...errors, account: ""});
+          setErrors({...errors, username: ""});
         }
         break;
       case "password":
-        if (!regExp.test(value)) {
+        if (!regExp.test(values[prop])) {
           setErrors({...errors, password: "密码格式错误！"});
         } else {
           setErrors({...errors, password: ""});
         }
         break;
       case "agreeTerm":
-        value === false ?
+        values[prop] === false ?
           setErrors({...errors, agreeTerm: "必须同意协议才能登录！"}) :
           setErrors({...errors, agreeTerm: ""});
         break;
       default:
         return false;
     }
+  }
+
+  const handleChange = (prop) => (e) => {
+    const value = (prop === "agreeTerm" ? e.target.checked : e.target.value);
+    setValues({...values, [prop]: value});
   };
 
   const validate = () => {
-    return (values.account === "" || values.password === "" || !values.agreeTerm || errors.account !== "" || errors.password !== "");
+    return (values.username === "" || values.password === "" || !values.agreeTerm || errors.username !== "" || errors.password !== "");
   }
 
   const resetForm = () => {
     setValues({account: "", password: "", agreeTerm: false});
-    setErrors({account: "", password: "", agreeTerm: ""});
+    setErrors({username: "", password: "", agreeTerm: ""});
   }
 
   const submitForm = (e) => {
@@ -78,7 +79,7 @@ export const LoginPage = () => {
     navigation("http://www.pethome.com:3002/");
   } else {
     return (
-      <Container id="LoginPageContainer">
+      <Container id="LoginPage">
         <Grid container justifyContent="center">
           <Grid item>
             <Card id="LoginCard" elevation={2}>
@@ -91,22 +92,22 @@ export const LoginPage = () => {
                   <Grid container direction="column" spacing={1.2}>
                     {/* 用户名 */}
                     <Grid item>
-                      <FormControl className="form-control" error={errors.account !== ""}>
+                      <FormControl className="form-control" error={errors.username !== ""}>
                         <InputLabel htmlFor="component-outlined">账号</InputLabel>
                         <OutlinedInput
                           id="component-outlined"
-                          value={values.account}
-                          onChange={handleChange("account")}
-                          onBlur={handleBlur("account")}
+                          value={values.username}
+                          onChange={handleChange("username")}
+                          onBlur={handleBlur("username")}
                           label="账号"
-                          placeholder="教工号 / 管理员"
+                          placeholder="用户名/邮箱"
                           startAdornment={<AccountBoxIcon/>}
                           endAdornment={
-                            values.account === "" ? null :
-                              errors.account === "" ? <CheckIcon color="success"/> : <ErrorIcon color="error"/>
+                            values.username === "" ? null :
+                              errors.username === "" ? <CheckIcon color="success"/> : <ErrorIcon color="error"/>
                           }
                         />
-                        <FormHelperText className="form-helper-text">{errors.account}</FormHelperText>
+                        <FormHelperText className="form-helper-text">{errors.username}</FormHelperText>
                       </FormControl>
                     </Grid>
                     {/* 密码 */}

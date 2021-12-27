@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hot-cat-01",
+    "path": "cat/ragdoll",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick60561542248761.jpg",
+    "label": "布偶猫"
+  },
+  {
+    "id": "hot-cat-02",
+    "path": "cat/british-shorthair",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick60751542248890.jpg",
+    "label": "英国短毛猫"
+  },
+  {
+    "id": "hot-cat-03",
+    "path": "cat/dragon-li",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick44291542249057.jpg",
+    "label": "中国狸花猫"
+  },
+  {
+    "id": "hot-cat-04",
+    "path": "cat/japanese-bobtail",
+    "img": "http://img.boqiicdn.com/Data/BK/P/img70661405933355.jpg",
+    "label": "日本短尾猫"
+  },
+  {
+    "id": "hot-cat-05",
+    "path": "cat/canadian-hairless",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick95081542249498.jpg",
+    "label": "加拿大无毛猫"
+  },
+  {
+    "id": "hot-cat-06",
+    "path": "cat/exotic-shorthair",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick13791542249182.jpg",
+    "label": "异国短毛猫"
+  },
+  {
+    "id": "hot-cat-07",
+    "path": "cat/persian",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick29241542249333.jpg",
+    "label": "波斯猫"
+  },
+  {
+    "id": "hot-cat-08",
+    "path": "cat/siamese",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick43321542249438.jpg",
+    "label": "暹罗猫"
+  },
+  {
+    "id": "hot-cat-09",
+    "path": "cat/scottish-fold",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick4741542249611.jpg",
+    "label": "苏格兰折耳猫"
+  },
+  {
+    "id": "hot-cat-10",
+    "path": "cat/sphynx",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick54971542249698.jpg",
+    "label": "斯芬克斯猫"
+  },
+  {
+    "id": "hot-cat-11",
+    "path": "cat/russian-blue",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick5801542249763.jpg",
+    "label": "俄罗斯蓝猫"
+  },
+  {
+    "id": "hot-cat-12",
+    "path": "cat/chinchilla",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick63811547195261.jpg",
+    "label": "金吉拉"
+  }
+]

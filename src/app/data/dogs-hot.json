@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hot-dog-01",
+    "path": "dog/golden-retriever",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick64591541411807.png",
+    "label": "金毛"
+  },
+  {
+    "id": "hot-dog-02",
+    "path": "dog/british-shorthair",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick15371541412980.jpg",
+    "label": "罗威纳犬"
+  },
+  {
+    "id": "hot-dog-03",
+    "path": "dog/dragon-li",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick46441541413367.png",
+    "label": "哈士奇"
+  },
+  {
+    "id": "hot-dog-04",
+    "path": "dog/japanese-bobtail",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick67471541414025.jpg",
+    "label": "博美犬"
+  },
+  {
+    "id": "hot-dog-05",
+    "path": "dog/canadian-hairless",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick20371541414110.jpg",
+    "label": "阿拉斯加雪橇犬"
+  },
+  {
+    "id": "hot-dog-06",
+    "path": "dog/exotic-shorthair",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick93341541495659.jpg",
+    "label": "比熊犬"
+  },
+  {
+    "id": "hot-dog-07",
+    "path": "dog/persian",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick83561541495798.jpg",
+    "label": "拉布拉多猎犬"
+  },
+  {
+    "id": "hot-dog-08",
+    "path": "dog/siamese",
+    "img": "http://img.boqiicdn.com/Data/BK/P/img5701405934288.jpg",
+    "label": "法老王猎犬"
+  },
+  {
+    "id": "hot-dog-09",
+    "path": "dog/scottish-fold",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick15731541496308.jpg",
+    "label": "贵宾"
+  },
+  {
+    "id": "hot-dog-10",
+    "path": "dog/sphynx",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick29091541496916.jpg",
+    "label": "柴犬"
+  },
+  {
+    "id": "hot-dog-11",
+    "path": "dog/russian-blue",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick34901541497010.jpg",
+    "label": "边境牧羊犬"
+  },
+  {
+    "id": "hot-dog-12",
+    "path": "dog/chinchilla",
+    "img": "http://img.boqiicdn.com/Data/BK/P/imagick441541497241.jpg",
+    "label": "泰迪犬"
+  }
+]

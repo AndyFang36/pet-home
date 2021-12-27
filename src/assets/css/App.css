@@ -8,7 +8,7 @@ header a.active button{
 }
 
 main{
-
+  min-height: 80%;
 }
 
 #HomePage hr,
@@ -180,4 +180,19 @@ b.section-label{
 
 .pagination .MuiPagination-ul{
   justify-content: end;
+}
+
+.pets-articles .MuiGrid-container a{
+  width: 100%;
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.pets-articles .MuiGrid-container time{
+  float: right;
+}
+
+.breadcrumb{
+  display: flex !important;
+  justify-content: start;
 }

@@ -7,14 +7,14 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Avatar, Button, Container, Tooltip} from "@mui/material";
+import {Avatar, Button, Container, Divider, Tooltip} from "@mui/material";
 import LogoImg from "../../assets/images/logo.svg";
 import {useDispatch, useSelector} from "react-redux";
-import {NavLink} from "react-router-dom";
-
-const settings = ['个人资料', '我的账号', '设置', '退出登录'];
+import {NavLink, useNavigate} from "react-router-dom";
+import {logout} from "../../features/loginStateSlice";
 
 export const Header = () => {
+  const navigation = useNavigate();
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state["loginState"].loggedIn);
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -97,7 +97,6 @@ export const Header = () => {
             <NavLink to="/cat"><Button onClick={handleCloseNavMenu}>猫咪</Button></NavLink>
             <NavLink to="/pet"><Button onClick={handleCloseNavMenu}>小宠</Button></NavLink>
             <NavLink to="/aquarium"><Button onClick={handleCloseNavMenu}>水族</Button></NavLink>
-            <NavLink to="/plant"><Button onClick={handleCloseNavMenu}>植物</Button></NavLink>
             <NavLink to="/faq"><Button onClick={handleCloseNavMenu}>问答专区</Button></NavLink>
             <NavLink to="/about"><Button onClick={handleCloseNavMenu}>关于</Button></NavLink>
           </Box>
@@ -120,11 +119,16 @@ export const Header = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
+                  <MenuItem onClick={() => navigation("/profile")}>
+                    <Typography textAlign="center">我的账户</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">设置中心</Typography>
+                  </MenuItem>
+                  <Divider/>
+                  <MenuItem onClick={()=>dispatch(logout())}>
+                    <Typography textAlign="center">退出登录</Typography>
+                  </MenuItem>
                 </Menu>
               </Box>) :
               (<NavLink to="/login"><Button color="inherit">登录/注册</Button></NavLink>)
